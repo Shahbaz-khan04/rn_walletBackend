@@ -4,10 +4,13 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 
+console.log("DATABASE_URL:", process.env.DATABASE_URL);
 // This will create SQL connection using our db url
 export const sql = neon(process.env.DATABASE_URL)
 
 export async function initDB() {
+console.log("DATABASE_URL:", process.env.DATABASE_URL);
+
   try {
     await sql`CREATE TABLE IF NOT EXISTS transactions(
       id SERIAL PRIMARY KEY,
