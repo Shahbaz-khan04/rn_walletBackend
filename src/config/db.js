@@ -4,7 +4,6 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 
-console.log("DATABASE_URL:", process.env.DATABASE_URL);
 // This will create SQL connection using our db url
 export const sql = neon(process.env.DATABASE_URL)
 

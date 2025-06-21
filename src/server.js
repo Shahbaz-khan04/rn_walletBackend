@@ -22,10 +22,11 @@ app.use(cors({
 app.use(rateLimiter);
 app.use(express.json());
 
-console.log("DB_URL:", process.env.DATABASE_URL);
-
 const PORT = process.env.PORT || 5001;
 
+app.get("/api/health", (req, res) => {
+  res.send("It's Working");
+})
 app.use("/api/transactions", transactionsRoute)
 
 initDB().then(() => {
