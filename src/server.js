@@ -22,6 +22,8 @@ app.use(cors({
 app.use(rateLimiter);
 app.use(express.json());
 
+console.log("DB_URL:", process.env.DATABASE_URL);
+
 const PORT = process.env.PORT || 5001;
 
 app.use("/api/transactions", transactionsRoute)
